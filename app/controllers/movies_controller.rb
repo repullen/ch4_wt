@@ -5,8 +5,13 @@ class MoviesController < ApplicationController
   
   def show
     id = params[:id] # retrieve movie ID from URI route
-    @movie = Movie.find(id) # look up movie by unique ID
-    # will render app/views/movies/show.html.haml by default
+    @movie = Movie.find(id) # look up movie by ID
+    # will render show.html.haml by default
+  end
+  
+  def new
+    @movie = Movie.new
+    #default: render 'new' template
   end
   
   private
